@@ -16,8 +16,9 @@ ls -al docs
 pip3 install -r sphinx/requirements.txt
 
 # prepare commands
-export ADDPATH_COMMAND="add_replab_path; replab_init('verbose', 2);"
+export ADDPATH_COMMAND="path, add_replab_path; path, replab_init('verbose', 2);"
 GENERATE_COMMAND="exit(~replab_quantum_generate('sphinx'));";
+echo "ADDPATH_COMMAND=$ADDPATH_COMMAND";
 echo "GENERATE_COMMAND=$GENERATE_COMMAND";
 
 # Check what octave packages we have installed
