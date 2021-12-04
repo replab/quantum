@@ -1,0 +1,3 @@
+[submodule "external/replab"]
+	path = external/replab
+	url = https://github.com/replab/replab.git
