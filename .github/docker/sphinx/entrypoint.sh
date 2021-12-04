@@ -27,6 +27,11 @@ octave -q --eval "ver"
 # Check that octave can access java
 octave --eval "b = javaMethod('valueOf', 'java.math.BigInteger', 2)"
 
+# Check just Octave paths
+octave --eval "$ADDPATH_COMMAND"
+octave --eval "path"
+octave --eval "$ADDPATH_COMMAND path"
+
 # Run commands
 if octave -q --eval "$ADDPATH_COMMAND $GENERATE_COMMAND"; then
   # Check where we ended up and what's going on where we are
