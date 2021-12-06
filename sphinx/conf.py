@@ -49,7 +49,8 @@ extensions = ['sphinx.ext.autodoc',   # for enumeration of objects stuff
               'sphinx.ext.napoleon',  # support for shorthand syntax
               'sphinx.ext.mathjax',   # LaTeX support
               'texext.math_dollar',   # lightweight LaTeX filter
-              'ablog']
+              'ablog',                # for blogging
+              'sphinx.ext.intersphinx']
 
 import jupytext
 
@@ -96,6 +97,10 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', '**.ipynb_checkpoints', 
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'
 
+# The location of Replab's API documentation, to enable cross-references
+intersphinx_mapping = {'+replab': ('https://replab.github.io/replab', None)}
+intersphinx_cache_limit = -1 # always fetch the latest version of https://replab.github.io/replab/objects.inv
+intersphinx_timeout = 10 # timeout so we don't wait indefinitely if the website is unavailable
 
 # -- Options for HTML output -------------------------------------------------
 
