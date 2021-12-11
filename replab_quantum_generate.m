@@ -37,7 +37,7 @@ function result = replab_quantum_generate(what)
 
     % Get the replab folder
     rp = replab.globals.replabPath;
-    if ~isequal(pathStr, rp(1:length(pathStr)))
+    if (length(rp) < length(pathStr)) || ~isequal(pathStr, rp(1:length(pathStr)))
         warning('Using a different version of RepLAB than the one contained in the ''external/replab'' subfolder. To avoid version mismatches, remove RepLAB from the path and re-initialize the library in the correct subfolder.');
     end
     srcRoot = fullfile(rp, 'src');
