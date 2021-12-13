@@ -28,7 +28,7 @@ from pathlib import Path
 version = Path('../version.txt').read_text().strip()
 release = version
 
-rst_epilog = '.. _latest release ZIP: https://github.com/replab/replab/archive/v' + version + '.zip'
+# rst_epilog = '.. _latest release ZIP: https://github.com/replab/replab/archive/v' + version + '.zip'
 
 # -- General configuration ---------------------------------------------------
 
@@ -50,7 +50,7 @@ extensions = ['sphinx.ext.autodoc',   # for enumeration of objects stuff
               'sphinx.ext.mathjax',   # LaTeX support
               'texext.math_dollar',   # lightweight LaTeX filter
               'ablog',                # for blogging
-              'sphinx.ext.intersphinx']
+              'sphinx.ext.intersphinx'] # for cross-references
 
 import jupytext
 
@@ -98,7 +98,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', '**.ipynb_checkpoints', 
 pygments_style = 'sphinx'
 
 # The location of Replab's API documentation, to enable cross-references
-intersphinx_mapping = {'+replab': ('https://replab.github.io/replab', None)}
+intersphinx_mapping = {'mat': ('https://replab.github.io/replab', None)}
 intersphinx_cache_limit = -1 # always fetch the latest version of https://replab.github.io/replab/objects.inv
 intersphinx_timeout = 10 # timeout so we don't wait indefinitely if the website is unavailable
 
