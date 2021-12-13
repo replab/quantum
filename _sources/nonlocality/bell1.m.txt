@@ -167,3 +167,5 @@ I3 = Gdec.irrep(3)
 % In particular, the method `dec.irrep(i)` needs to be replaced by `dec.irrep(i,j)` where $i$ is the index of the irreducible representation type, and $j$ is the copy index.
 %
 % Also, if one works using real representations, there could be a difference in the irreducible decomposition when the representation is treated as a complex one. This is because the real field is not algebraically closed. Over the reals, there are three kinds of irreducible representations: RepLAB identifies and puts them in a canonical representation. Not to worry: representation of symmetric groups and derivatives (direct products and the like) are decomposed the same way over the real and complex numbers.
+
+

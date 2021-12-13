@@ -18,7 +18,7 @@ ioRep = ioGroup.imprimitiveRep(outputRep);
 
 scenarioGroup = outputGroup.wreathProduct(ioGroup);
 
-scenarioGroup.elements
+scenarioGroup.sample
 
 % The representation on the behavior $P(ab|xy)$ is however a primitive
 % representation, as $P(a|x; b|y)$ ressembles a tensor. Inside each party,
@@ -44,3 +44,5 @@ dec.nComponents
 % - The signaling between Alice and Bob
 % - The marginal probabilities of Alice and Bob
 % - The correlation between Alice and Bob
+
+
