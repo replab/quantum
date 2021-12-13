@@ -58,7 +58,7 @@ function result = replab_quantum_generate(what)
             % Modify API links in all matlab file. First, we load the table
             % of available links
             baseWeb = 'https://replab.github.io/replab';
-            if unix('python -m sphinx.ext.intersphinx https://replab.github.io/replab/objects.inv > ', pathStr, '/_sphinx/API_links.txt')
+            if unix(['python -m sphinx.ext.intersphinx https://replab.github.io/replab/objects.inv > ', pathStr, '/_sphinx/API_links.txt'])
                 warning('API conversion table not found, cross-links will not work in .m files');
             end
             
