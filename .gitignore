@@ -120,3 +120,7 @@ Temporary Items
 # Files generated automatically by github
 docs/_site/
 
+##---------------------------------------------------
+# nbsphinx workaround
+##---------------------------------------------------
+_sphinx
