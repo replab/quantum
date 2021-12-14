@@ -44,5 +44,3 @@ dec.nComponents
 % - The signaling between Alice and Bob
 % - The marginal probabilities of Alice and Bob
 % - The correlation between Alice and Bob
-
-

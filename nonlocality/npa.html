@@ -583,7 +583,7 @@ preimages{3}: [1, 3, 2, 4, -5]
 <div class="highlight"><pre>
 g =
 
-   1   2  -3   5   4
+   1   3   2   4  -5
 
 </pre></div></div>
 </div>
@@ -612,10 +612,10 @@ Orthogonal reducible representation
         isUnitary: true
            parent: Orthogonal representation
 basis(1,&#39;double&#39;): [1; 0; 0; 0; 0]
-basis(2,&#39;double&#39;): [0; 0.60634; -0.3638; -0.1715; -0.68599]
-basis(3,&#39;double&#39;): [0; -0.3638; -0.60634; 0.68599; -0.1715]
-basis(4,&#39;double&#39;): [0; 0.70608; 0.03818; 0.52627; 0.47227]
-basis(5,&#39;double&#39;): [0; 0.03818; -0.70608; -0.47227; 0.52627]
+basis(2,&#39;double&#39;): [0; -0.5; -0.5; -0.70711; 0]
+basis(3,&#39;double&#39;): [0; 0.5; -0.5; 0; 0.70711]
+basis(4,&#39;double&#39;): [0; -0.5; 0.5; 0; 0.70711]
+basis(5,&#39;double&#39;): [0; -0.5; -0.5; 0.70711; 0]
      component(1): Isotypic component R(1) (trivial)
      component(2): Isotypic component R(2) (nontrivial)
      component(3): Isotypic component R(2) (nontrivial)
@@ -668,26 +668,26 @@ basis(1,&#39;exact&#39;): [1; 0; 0; 0; 0]
 U =
 
    1.0000        0        0        0        0
-        0   0.6063  -0.3638   0.7061   0.0382
-        0  -0.3638  -0.6063   0.0382  -0.7061
-        0  -0.1715   0.6860   0.5263  -0.4723
-        0  -0.6860  -0.1715   0.4723   0.5263
+        0  -0.5000   0.5000  -0.5000  -0.5000
+        0  -0.5000  -0.5000   0.5000  -0.5000
+        0  -0.7071        0        0   0.7071
+        0        0   0.7071   0.7071        0
 
 ans =
 
    1.0000        0        0        0        0
-        0   1.0000   0.0000  -0.0000   0.0000
-        0   0.0000   1.0000   0.0000  -0.0000
-        0  -0.0000   0.0000   1.0000   0.0000
-        0   0.0000  -0.0000   0.0000   1.0000
+        0   1.0000   0.0000  -0.0000  -0.0000
+        0   0.0000   1.0000  -0.0000  -0.0000
+        0  -0.0000  -0.0000   1.0000   0.0000
+        0  -0.0000  -0.0000   0.0000   1.0000
 
 ans =
 
         0        0        0        0        0
-        0  -1.4142  -0.0000   0.0000   0.0000
-        0  -0.0000  -1.4142  -0.0000   0.0000
-        0   0.0000  -0.0000   1.4142   0.0000
-        0  -0.0000   0.0000   0.0000   1.4142
+        0   1.4142   0.0000   0.0000        0
+        0   0.0000   1.4142        0  -0.0000
+        0   0.0000        0  -1.4142  -0.0000
+        0        0  -0.0000  -0.0000  -1.4142
 
 </pre></div></div>
 </div>
@@ -749,15 +749,6 @@ ans = 2.8284
 </pre></div></div>
 </div>
 <p>As an exercice, recover an algebraic basis from <code class="docutils literal notranslate"><span class="pre">U</span></code>, guess the form of the semidefinite program when fully block-diagonal (i.e. for the full group of CHSH symmetries). <strong>Remark that now the problem can be solved by hand to recover the</strong> <span class="math notranslate nohighlight">\(2\sqrt{2}\)</span> <strong>bound, as the SDP matrix is fully diagonal, and thus corresponds to linear inequalities.</strong></p>
-<div class="nbinput nblast docutils container">
-<div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[ ]:
-</pre></div>
-</div>
-<div class="input_area highlight-octave notranslate"><div class="highlight"><pre>
-<span></span>
-</pre></div>
-</div>
-</div>
 </section>
 
 <div class="section">

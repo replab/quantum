@@ -95,5 +95,3 @@ double(I_CHSH)
 
 % As an exercice, recover an algebraic basis from `U`, guess the form of the semidefinite program when fully block-diagonal (i.e. for the full group of CHSH symmetries).
 % **Remark that now the problem can be solved by hand to recover the** $2\sqrt{2}$ **bound, as the SDP matrix is fully diagonal, and thus corresponds to linear inequalities.**
-
-
