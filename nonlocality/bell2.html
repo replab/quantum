@@ -381,7 +381,7 @@ div.rendered_html tbody tr:hover {
 <p>We describe the relabelings in the CHSH scenario, and decompose their action on probability distributions <span class="math notranslate nohighlight">\(P(ab|xy)\)</span>, now using an abstract group construction.</p>
 <p>We identify those relabelings with a <a class="reference external" href="https://en.wikipedia.org/wiki/Wreath_product">wreath product</a> construction, which RepLAB supports. This topic guide can also be considered as a (small) introduction to the group constructions available in RepLAB.</p>
 <p>Before using <em>RepLAB</em> commands, we must first initialize the library:</p>
-<div class="nbinput nblast docutils container">
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
@@ -390,6 +390,14 @@ div.rendered_html tbody tr:hover {
 <span class="n">replab_init</span><span class="p">(</span><span class="s">&#39;verbose&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+replab_init: Initialization done.
+</pre></div></div>
 </div>
 <section id="Only-outputs">
 <h2>Only outputs<a class="headerlink" href="#Only-outputs" title="Permalink to this headline">¶</a></h2>
@@ -508,17 +516,27 @@ generator(1 or &#39;x1&#39;): [2, 1]
 
 ioGroup =
 
-replab.prods.WreathProductGroup_finite
-             A: Symmetric group acting on 2 elements
-             H: Symmetric group acting on 2 elements
-             N: Direct product group with 2 factors
-generatorNames: {&#39;x1&#39;, &#39;x2&#39;, &#39;x3&#39;}
-    generators: 1 x 3 cell
-      identity: {[1, 2], {[1, 2], [1, 2]}}
-             n: 2
-           phi: replab.perm.PermutationCellAction
-representative: {[1, 2], {[1, 2], [1, 2]}}
-          type: replab.prods.WreathProductGroup_finite
+names =
+{
+  [1,1] = generatorNames
+  [1,2] = generators
+  [1,3] = nice
+  [1,4] = niceIsomorphism
+  [1,5] = representative
+  [1,6] = type
+}
+
+Finite group of order 8
+                    A: Symmetric group acting on 2 elements
+                    H: Symmetric group acting on 2 elements
+                    N: Direct product group with 2 factors
+             identity: {[1, 2], {[1, 2], [1, 2]}}
+                    n: 2
+                  phi: replab.perm.PermutationCellAction
+ generator(1 or &#39;x1&#39;): {[2, 1], {[1, 2], [1, 2]}}
+generator(2 or &#39;x11&#39;): {[1, 2], {[2, 1], [1, 2]}}
+generator(3 or &#39;x12&#39;): {[1, 2], {[1, 2], [2, 1]}}
+     recognize.source: Dihedral group of order 8
 
 </pre></div></div>
 </div>

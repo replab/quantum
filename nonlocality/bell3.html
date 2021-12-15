@@ -375,7 +375,7 @@ div.rendered_html tbody tr:hover {
 <section id="Symmetries-in-Bell-nonlocality,-part-3">
 <h1>Symmetries in Bell nonlocality, part 3<a class="headerlink" href="#Symmetries-in-Bell-nonlocality,-part-3" title="Permalink to this headline">¶</a></h1>
 <p>Let us now turn our attention to the symmetries of the full scenario. We first recall the definitions of part 1.</p>
-<div class="nbinput nblast docutils container">
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
@@ -389,6 +389,14 @@ div.rendered_html tbody tr:hover {
 <span class="n">ioRep</span> <span class="p">=</span> <span class="n">ioGroup</span><span class="p">.</span><span class="n">imprimitiveRep</span><span class="p">(</span><span class="n">outputRep</span><span class="p">);</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+replab_init: Initialization done.
+</pre></div></div>
 </div>
 <p>The same story repeats for relabelings of parties: the scenario involves two homogeneous parties. We thus have two copies of the group relabeling inputs and/or outputs (one for Alice, one for Bob), and a copy of <span class="math notranslate nohighlight">\(S_2\)</span> that permutes the parties. This group desribing all possible relabellings in this scenario is thus given by:</p>
 <div class="nbinput nblast docutils container">
@@ -426,17 +434,17 @@ ans =
     {
       [1,1] =
 
-         1   2
+         2   1
 
       [1,2] =
       {
         [1,1] =
 
-           1   2
+           2   1
 
         [1,2] =
 
-           2   1
+           1   2
 
       }
 
@@ -456,7 +464,7 @@ ans =
 
         [1,2] =
 
-           1   2
+           2   1
 
       }
 
@@ -494,12 +502,13 @@ ans =
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
+warning: -largeArrayDims and -compatibleArrayDims are accepted for compatibility, but ignored
 dec =
 
 Orthogonal reducible representation
    dimension: 16
        field: &#39;R&#39;
-       group: replab.prods.WreathProductGroup_finite
+       group: Finite group of order 128
    isUnitary: true
       parent: Orthogonal representation
 component(1): Isotypic component R(1) (trivial)
