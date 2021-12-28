@@ -25,7 +25,7 @@ author = 'Denis Rosset, Jean-Daniel Bancal and collaborators'
 
 from pathlib import Path
 
-version = Path('../version.txt').read_text().strip()
+version = Path('../../version.txt').read_text().strip()
 release = version
 
 # rst_epilog = '.. _latest release ZIP: https://github.com/replab/replab/archive/v' + version + '.zip'

@@ -17,7 +17,7 @@ pip3 install -r sphinx/requirements.txt
 
 # prepare commands
 ADDPATH_COMMAND="run external/replab/replab_init('verbose', 2);"
-GENERATE_COMMAND="exit(~replab_sphinx);";
+GENERATE_COMMAND="exit(~build);";
 echo "ADDPATH_COMMAND=$ADDPATH_COMMAND";
 echo "GENERATE_COMMAND=$GENERATE_COMMAND";
 

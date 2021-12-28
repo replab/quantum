@@ -124,3 +124,13 @@ docs/_site/
 # nbsphinx workaround
 ##---------------------------------------------------
 _sphinx
+
+
+##---------------------------------------------------
+# auto-generated files
+##---------------------------------------------------
+generated/doctests
+generated/notebooktests
+generated/sphinx
+generated/src
+
