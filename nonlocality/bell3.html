@@ -395,11 +395,17 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-replab_init: Initialization done.
+warning: addpath: /github/workspace/generated/sphinx/nonlocality/../../external/replab: No such file or directory
+error: &#39;replab_init&#39; undefined near line 1, column 1
+error: &#39;replab&#39; undefined near line 1, column 1
+error: &#39;outputGroup&#39; undefined near line 1, column 1
+error: &#39;replab&#39; undefined near line 1, column 1
+error: &#39;inputGroup&#39; undefined near line 1, column 1
+error: &#39;ioGroup&#39; undefined near line 1, column 1
 </pre></div></div>
 </div>
 <p>The same story repeats for relabelings of parties: the scenario involves two homogeneous parties. We thus have two copies of the group relabeling inputs and/or outputs (one for Alice, one for Bob), and a copy of <span class="math notranslate nohighlight">\(S_2\)</span> that permutes the parties. This group desribing all possible relabellings in this scenario is thus given by:</p>
-<div class="nbinput nblast docutils container">
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[2]:
 </pre></div>
 </div>
@@ -407,6 +413,14 @@ replab_init: Initialization done.
 <span></span><span class="n">scenarioGroup</span> <span class="p">=</span> <span class="n">outputGroup</span><span class="p">.</span><span class="n">wreathProduct</span><span class="p">(</span><span class="n">ioGroup</span><span class="p">);</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+error: &#39;outputGroup&#39; undefined near line 1, column 1
+</pre></div></div>
 </div>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[3]:
@@ -422,62 +436,11 @@ replab_init: Initialization done.
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-ans =
-{
-  [1,1] =
-
-     1   2
-
-  [1,2] =
-  {
-    [1,1] =
-    {
-      [1,1] =
-
-         2   1
-
-      [1,2] =
-      {
-        [1,1] =
-
-           2   1
-
-        [1,2] =
-
-           1   2
-
-      }
-
-    }
-
-    [1,2] =
-    {
-      [1,1] =
-
-         1   2
-
-      [1,2] =
-      {
-        [1,1] =
-
-           1   2
-
-        [1,2] =
-
-           2   1
-
-      }
-
-    }
-
-  }
-
-}
-
+error: &#39;scenarioGroup&#39; undefined near line 1, column 1
 </pre></div></div>
 </div>
 <p>The representation on the behavior <span class="math notranslate nohighlight">\(P(ab|xy)\)</span> is however a primitive representation, as <span class="math notranslate nohighlight">\(P(a|x; b|y)\)</span> ressembles a tensor. Inside each party, we use the imprimitive representation constructed before.</p>
-<div class="nbinput nblast docutils container">
+<div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[4]:
 </pre></div>
 </div>
@@ -485,6 +448,14 @@ ans =
 <span></span><span class="n">probRep</span> <span class="p">=</span> <span class="n">scenarioGroup</span><span class="p">.</span><span class="n">primitiveRep</span><span class="p">(</span><span class="n">ioRep</span><span class="p">);</span>
 </pre></div>
 </div>
+</div>
+<div class="nboutput nblast docutils container">
+<div class="prompt empty docutils container">
+</div>
+<div class="output_area docutils container">
+<div class="highlight"><pre>
+error: &#39;scenarioGroup&#39; undefined near line 1, column 1
+</pre></div></div>
 </div>
 <p>Decomposition of the full probability space</p>
 <p>We can now compute the decomposition of this representation on <span class="math notranslate nohighlight">\(P(ab|xy)\)</span>:</p>
@@ -502,22 +473,7 @@ ans =
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-warning: -largeArrayDims and -compatibleArrayDims are accepted for compatibility, but ignored
-dec =
-
-Orthogonal reducible representation
-   dimension: 16
-       field: &#39;R&#39;
-       group: Finite group of order 128
-   isUnitary: true
-      parent: Orthogonal representation
-component(1): Isotypic component R(1) (trivial)
-component(2): Isotypic component R(1) (nontrivial)
-component(3): Isotypic component R(2) (nontrivial)
-component(4): Isotypic component R(4) (nontrivial)
-component(5): Isotypic component R(4) (nontrivial)
-component(6): Isotypic component R(4) (nontrivial)
-
+error: &#39;probRep&#39; undefined near line 1, column 1
 </pre></div></div>
 </div>
 <p>There are 6 irreducible components</p>
@@ -535,7 +491,7 @@ component(6): Isotypic component R(4) (nontrivial)
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-ans = 6
+error: &#39;dec&#39; undefined near line 1, column 1
 </pre></div></div>
 </div>
 <p>These components correspond to the following physical elements ( see <a class="reference external" href="https://arxiv.org/abs/1610.01833">arXiv:1610.01833</a> ) for more details:</p>
