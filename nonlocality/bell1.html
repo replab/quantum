@@ -382,13 +382,13 @@ div.rendered_html tbody tr:hover {
 <h1>Symmetries in Bell nonlocality, part 1<a class="headerlink" href="#Symmetries-in-Bell-nonlocality,-part-1" title="Permalink to this headline">¶</a></h1>
 <p>For a compact introduction to representation theory, see the <a class="reference external" href="https://link.springer.com/book/10.1007/978-1-4684-9458-7">book of Jean-Pierre Serre</a>.</p>
 <p>Follow the <a class="reference external" href="https://replab.github.io/replab/docs/installation.html">installation instructions</a>.</p>
-<p>Then add the RepLAB path. The path below is the one for the machine that produced this notebook! Replace by your own. Or, better, move to the root RepLAB folder and just run the <code class="docutils literal notranslate"><span class="pre">replab_init</span></code> script.</p>
+<p>Then add the RepLAB path. The path below is the one for the machine that produced this notebook! Replace by your own. Or, better, move to the root RepLAB folder and just run the root.replab_init script.</p>
 <div class="nbinput docutils container">
 <div class="prompt highlight-none notranslate"><div class="highlight"><pre><span></span>[1]:
 </pre></div>
 </div>
 <div class="input_area highlight-octave notranslate"><div class="highlight"><pre>
-<span></span><span class="nb">addpath</span><span class="p">([</span><span class="nb">pwd</span><span class="p">,</span> <span class="s">&#39;/../../external/replab&#39;</span><span class="p">]);</span>
+<span></span><span class="nb">addpath</span><span class="p">([</span><span class="nb">pwd</span><span class="p">,</span> <span class="s">&#39;/../../../external/replab&#39;</span><span class="p">]);</span>
 <span class="n">replab_init</span><span class="p">(</span><span class="s">&#39;verbose&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -398,8 +398,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-warning: addpath: /github/workspace/generated/sphinx/nonlocality/../../external/replab: No such file or directory
-error: &#39;replab_init&#39; undefined near line 1, column 1
+replab_init: Initialization done.
 </pre></div></div>
 </div>
 <section id="Symmetries-of-the-outcomes-of-a-measurement">
@@ -418,7 +417,7 @@ error: &#39;replab_init&#39; undefined near line 1, column 1
 </pre></div>
 </div>
 <div class="input_area highlight-octave notranslate"><div class="highlight"><pre>
-<span></span><span class="n">S5</span> <span class="p">=</span> <span class="n">replab</span><span class="p">.</span><span class="n">SymmetricGroup</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span> <span class="c">% or shorter, S5 = replab.S(5)</span>
+<span></span><span class="n">S5</span> <span class="p">=</span> <span class="n">replab</span><span class="p">.</span><span class="n">S</span><span class="p">(</span><span class="mi">5</span><span class="p">);</span>
 <span class="n">f</span> <span class="p">=</span> <span class="p">[</span><span class="mi">3</span> <span class="mi">2</span> <span class="mi">1</span> <span class="mi">5</span> <span class="mi">4</span><span class="p">]</span>
 <span class="n">g</span> <span class="p">=</span> <span class="p">[</span><span class="mi">2</span> <span class="mi">5</span> <span class="mi">4</span> <span class="mi">3</span> <span class="mi">1</span><span class="p">]</span>
 <span class="n">fg</span> <span class="p">=</span> <span class="n">S5</span><span class="p">.</span><span class="n">compose</span><span class="p">(</span><span class="n">f</span><span class="p">,</span> <span class="n">g</span><span class="p">)</span>
@@ -430,7 +429,6 @@ error: &#39;replab_init&#39; undefined near line 1, column 1
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-error: &#39;replab&#39; undefined near line 1, column 1
 f =
 
    3   2   1   5   4
@@ -439,7 +437,10 @@ g =
 
    2   5   4   3   1
 
-error: &#39;S5&#39; undefined near line 1, column 1
+fg =
+
+   2   4   5   1   3
+
 </pre></div></div>
 </div>
 <p>Note that permutations carry the size of their domain with them: the permutation <span class="math notranslate nohighlight">\([2, 3, 1, 4]\)</span> is not the same as the permutation <span class="math notranslate nohighlight">\([2, 3, 1]\)</span> even if both have the same action on <span class="math notranslate nohighlight">\(1,2,3\)</span> and the first one leaves <span class="math notranslate nohighlight">\(4\)</span> invariant.</p>
@@ -465,9 +466,34 @@ representation</a>; in RepLAB we call it the <em>defining representation</em> of
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-error: &#39;S5&#39; undefined near line 1, column 1
-error: &#39;rep5&#39; undefined near line 1, column 1
-error: &#39;rep5&#39; undefined near line 1, column 1
+rep5 =
+
+Orthogonal reducible representation
+   dimension: 5
+       field: &#39;R&#39;
+       group: Symmetric group acting on 5 elements
+   isUnitary: true
+preimages{1}: [2, 3, 4, 5, 1]
+   images{1}: 5 x 5 double
+preimages{2}: [2, 1, 3, 4, 5]
+   images{2}: 5 x 5 double
+
+ans =
+
+   0   0   0   0   1
+   1   0   0   0   0
+   0   0   0   1   0
+   0   0   1   0   0
+   0   1   0   0   0
+
+ans =
+
+   0   0   0   0   0
+   0   0   0   0   0
+   0   0   0   0   0
+   0   0   0   0   0
+   0   0   0   0   0
+
 </pre></div></div>
 </div>
 </section>
@@ -497,7 +523,23 @@ error: &#39;rep5&#39; undefined near line 1, column 1
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-error: &#39;rep5&#39; undefined near line 1, column 1
+warning: -largeArrayDims and -compatibleArrayDims are accepted for compatibility, but ignored
+D5 =
+
+Orthogonal reducible representation
+        dimension: 5
+            field: &#39;R&#39;
+            group: Symmetric group acting on 5 elements
+        isUnitary: true
+           parent: Orthogonal reducible representation
+basis(1,&#39;double&#39;): [0.44721; 0.44721; 0.44721; 0.44721; 0.44721]
+basis(2,&#39;double&#39;): [-0.88854; 0.20222; 0.13711; 0.2746; 0.2746]
+basis(3,&#39;double&#39;): [0.0081487; 0.82996; -0.50587; -0.16612; -0.16612]
+basis(4,&#39;double&#39;): [0.10217; -0.26509; -0.72477; 0.44384; 0.44384]
+basis(5,&#39;double&#39;): [-8.9605e-18; 1.0576e-18; 2.0581e-17; 0.70711; -0.70711]
+     component(1): Isotypic component R(1) (trivial)
+     component(2): Isotypic component R(4) (nontrivial)
+
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -515,7 +557,22 @@ error: &#39;rep5&#39; undefined near line 1, column 1
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-error: &#39;D5&#39; undefined near line 1, column 1
+N5 =
+
+Real reducible representation
+       dimension: 5
+           field: &#39;R&#39;
+           group: Symmetric group acting on 5 elements
+       isUnitary: false
+          parent: Orthogonal reducible representation
+basis(1,&#39;exact&#39;): [1/5; 1/5; 1/5; 1/5; 1/5]
+basis(2,&#39;exact&#39;): [4/5; -1/5; -1/5; -1/5; -1/5]
+basis(3,&#39;exact&#39;): [-1/5; 4/5; -1/5; -1/5; -1/5]
+basis(4,&#39;exact&#39;): [-1/5; -1/5; 4/5; -1/5; -1/5]
+basis(5,&#39;exact&#39;): [-1/5; -1/5; -1/5; 4/5; -1/5]
+    component(1): Isotypic component R(1) (trivial)
+    component(2): Isotypic component R(4) (nontrivial)
+
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -535,9 +592,18 @@ error: &#39;D5&#39; undefined near line 1, column 1
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-error: &#39;D5&#39; undefined near line 1, column 1
-error: &#39;subrep5a&#39; undefined near line 1, column 1
-error: &#39;subrep5a&#39; undefined near line 1, column 1
+subrep5a =
+
+Orthogonal trivial irreducible real-type subrepresentation
+        dimension: 1
+            field: &#39;R&#39;
+            group: Symmetric group acting on 5 elements
+        isUnitary: true
+           parent: Orthogonal reducible representation
+basis(1,&#39;double&#39;): [0.44721; 0.44721; 0.44721; 0.44721; 0.44721]
+
+ans = 1
+ans = 1
 </pre></div></div>
 </div>
 <p>We note that both generators of <span class="math notranslate nohighlight">\(S_5\)</span> look like the identity matrix of dimension <span class="math notranslate nohighlight">\(1\)</span> in that subrepresentation. Thus, any element of <span class="math notranslate nohighlight">\(S_5\)</span> corresponds to the identity matrix for that subrepresentation. Such a representation with an identity image is the <em>trivial representation</em>.</p>
@@ -558,9 +624,33 @@ error: &#39;subrep5a&#39; undefined near line 1, column 1
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-error: &#39;D5&#39; undefined near line 1, column 1
-error: &#39;subrep5b&#39; undefined near line 1, column 1
-error: &#39;subrep5b&#39; undefined near line 1, column 1
+subrep5b =
+
+Orthogonal fully nontrivial irreducible real-type subrepresentation
+        dimension: 4
+            field: &#39;R&#39;
+            group: Symmetric group acting on 5 elements
+        isUnitary: true
+           parent: Orthogonal reducible representation
+basis(1,&#39;double&#39;): [-0.88854; 0.20222; 0.13711; 0.2746; 0.2746]
+basis(2,&#39;double&#39;): [0.0081487; 0.82996; -0.50587; -0.16612; -0.16612]
+basis(3,&#39;double&#39;): [0.10217; -0.26509; -0.72477; 0.44384; 0.44384]
+basis(4,&#39;double&#39;): [-8.9605e-18; 1.0576e-18; 2.0581e-17; 0.70711; -0.70711]
+
+ans =
+
+  -0.282889   0.078518  -0.487200   0.822462
+  -0.905903  -0.302814   0.269181  -0.123226
+   0.299768  -0.918925   0.085703   0.241601
+  -0.097221  -0.240241  -0.826337  -0.500000
+
+ans =
+
+  -1.8975e-01  -8.9640e-01   4.0059e-01   9.3451e-18
+  -8.9640e-01   3.2462e-01   3.0182e-01  -1.5142e-17
+   4.0059e-01   3.0182e-01   8.6512e-01  -2.7681e-17
+   9.3451e-18  -1.5142e-17  -2.7681e-17   1.0000e+00
+
 </pre></div></div>
 </div>
 <p>Now the generators of <span class="math notranslate nohighlight">\(S_5\)</span> look like they are doing something in that subrepresentation! That representation is actually the <a class="reference external" href="https://groupprops.subwiki.org/wiki/Standard_representation">standard representation</a> of <span class="math notranslate nohighlight">\(S_5\)</span>.</p>
@@ -589,9 +679,30 @@ error: &#39;subrep5b&#39; undefined near line 1, column 1
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-error: &#39;D5&#39; undefined near line 1, column 1
-error: &#39;B&#39; undefined near line 1, column 1
-error: &#39;B&#39; undefined near line 1, column 1
+B =
+
+   4.4721e-01  -8.8854e-01   8.1487e-03   1.0217e-01  -8.9605e-18
+   4.4721e-01   2.0222e-01   8.2996e-01  -2.6509e-01   1.0576e-18
+   4.4721e-01   1.3711e-01  -5.0587e-01  -7.2477e-01   2.0581e-17
+   4.4721e-01   2.7460e-01  -1.6612e-01   4.4384e-01   7.0711e-01
+   4.4721e-01   2.7460e-01  -1.6612e-01   4.4384e-01  -7.0711e-01
+
+ans =
+
+   1.0000e+00  -1.2407e-16   1.8543e-16   2.3735e-16  -1.5851e-17
+   2.4083e-16  -2.8289e-01   7.8518e-02  -4.8720e-01   8.2246e-01
+   9.2751e-17  -9.0590e-01  -3.0281e-01   2.6918e-01  -1.2323e-01
+  -5.0103e-17   2.9977e-01  -9.1892e-01   8.5703e-02   2.4160e-01
+  -2.9058e-17  -9.7221e-02  -2.4024e-01  -8.2634e-01  -5.0000e-01
+
+ans =
+
+   1.0000e+00  -1.8095e-16  -8.2909e-17  -1.4811e-16  -8.7621e-17
+   2.1252e-16  -1.8975e-01  -8.9640e-01   4.0059e-01  -3.6642e-17
+   6.6647e-17  -8.9640e-01   3.2462e-01   3.0182e-01  -7.8782e-17
+  -7.6943e-17   4.0059e-01   3.0182e-01   8.6512e-01   4.8366e-18
+  -1.7174e-17  -1.0216e-17   9.6063e-17  -1.0190e-16   1.0000e+00
+
 </pre></div></div>
 </div>
 </section>
@@ -614,7 +725,7 @@ error: &#39;B&#39; undefined near line 1, column 1
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-error: &#39;replab&#39; undefined near line 1, column 1
+error: constructor: method &#39;SymmetricGroup&#39; has protected access and cannot be run in this context
 error: &#39;S2&#39; undefined near line 1, column 1
 </pre></div></div>
 </div>
@@ -695,7 +806,7 @@ error: &#39;D2&#39; undefined near line 1, column 1
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-error: &#39;replab&#39; undefined near line 1, column 1
+error: constructor: method &#39;SymmetricGroup&#39; has protected access and cannot be run in this context
 error: &#39;S4&#39; undefined near line 1, column 1
 error: &#39;G&#39; undefined near line 1, column 1
 error: &#39;G&#39; undefined near line 1, column 1

@@ -376,7 +376,7 @@ div.rendered_html tbody tr:hover {
 </pre></div>
 </div>
 <div class="input_area highlight-octave notranslate"><div class="highlight"><pre>
-<span></span><span class="nb">addpath</span><span class="p">([</span><span class="nb">pwd</span><span class="p">,</span> <span class="s">&#39;/../../external/replab&#39;</span><span class="p">]);</span>
+<span></span><span class="nb">addpath</span><span class="p">([</span><span class="nb">pwd</span><span class="p">,</span> <span class="s">&#39;/../../../external/replab&#39;</span><span class="p">]);</span>
 <span class="n">replab_init</span><span class="p">(</span><span class="s">&#39;verbose&#39;</span><span class="p">,</span> <span class="mi">0</span><span class="p">);</span>
 </pre></div>
 </div>
@@ -386,8 +386,7 @@ div.rendered_html tbody tr:hover {
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-warning: addpath: /github/workspace/generated/sphinx/nonlocality/../../external/replab: No such file or directory
-error: &#39;replab_init&#39; undefined near line 1, column 1
+replab_init: Initialization done.
 </pre></div></div>
 </div>
 <p>We examine an upper bound on the quantum maximum of the CHSH inequality. We use the NPA hierarchy, and assume the moment matrix has been constructed in the symmetric subspace, as in <a class="reference external" href="https://arxiv.org/abs/1808.09598">arXiv:1808.09598</a>.</p>
@@ -420,11 +419,7 @@ error: &#39;replab_init&#39; undefined near line 1, column 1
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-error: &#39;sdpvar&#39; undefined near line 1, column 1
-error: &#39;y&#39; undefined near line 1, column 1
-error: &#39;y&#39; undefined near line 1, column 1
-error: &#39;X&#39; undefined near line 1, column 1
-error: &#39;I_CHSH&#39; undefined near line 1, column 1
+ans = 2.8284
 </pre></div></div>
 </div>
 <p>To help with symmetrization, we’ll use an equivalent form of the constraint X, and check the result.</p>
@@ -460,8 +455,8 @@ error: &#39;I_CHSH&#39; undefined near line 1, column 1
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-error: &#39;replab&#39; undefined near line 1, column 1
-error: &#39;G&#39; undefined near line 1, column 1
+ans =
+    16
 </pre></div></div>
 </div>
 <p>If necessary, we can also expand the group elements (use <code class="docutils literal notranslate"><span class="pre">G.elements.at(2)</span></code> to get the second element for example).</p>
@@ -479,7 +474,74 @@ error: &#39;G&#39; undefined near line 1, column 1
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-error: &#39;G&#39; undefined near line 1, column 1
+ans =
+{
+  [1,1] =
+
+     1   2   3   4   5
+
+  [1,2] =
+
+     1  -3  -2  -4   5
+
+  [1,3] =
+
+     1   2  -3   5   4
+
+  [1,4] =
+
+     1   3  -2  -5   4
+
+  [1,5] =
+
+     1   4   5   2   3
+
+  [1,6] =
+
+     1  -5  -4  -2   3
+
+  [1,7] =
+
+     1   4  -5   3   2
+
+  [1,8] =
+
+     1   5  -4  -3   2
+
+  [1,9] =
+
+     1  -5   4   3  -2
+
+  [1,10] =
+
+     1  -4   5  -3  -2
+
+  [1,11] =
+
+     1   5   4   2  -3
+
+  [1,12] =
+
+     1  -4  -5  -2  -3
+
+  [1,13] =
+
+     1  -3   2   5  -4
+
+  [1,14] =
+
+     1  -2   3  -5  -4
+
+  [1,15] =
+
+     1   3   2   4  -5
+
+  [1,16] =
+
+     1  -2  -3  -4  -5
+
+}
+
 </pre></div></div>
 </div>
 <p>Now, the representation we need is composed of signed permutation matrices; as we are considering a group of signed permutations, this is the group <em>natural representation</em>. Representations in RepLAB are described using the images of the generators. By calling <code class="docutils literal notranslate"><span class="pre">G.sample</span></code>, we get random elements from the group, and by calling <code class="docutils literal notranslate"><span class="pre">rep.image(g)</span></code> we get the image of a group element.</p>
@@ -497,7 +559,20 @@ error: &#39;G&#39; undefined near line 1, column 1
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-error: &#39;G&#39; undefined near line 1, column 1
+rep =
+
+Orthogonal representation
+   dimension: 5
+       field: &#39;R&#39;
+       group: Finite group of order 16
+   isUnitary: true
+preimages{1}: [1, 4, 5, 2, 3]
+   images{1}: 5 x 5 double
+preimages{2}: [1, -2, -3, -4, -5]
+   images{2}: 5 x 5 double
+preimages{3}: [1, 3, 2, 4, -5]
+   images{3}: 5 x 5 double
+
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -514,7 +589,10 @@ error: &#39;G&#39; undefined near line 1, column 1
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-error: &#39;G&#39; undefined near line 1, column 1
+g =
+
+   1   2   3   4   5
+
 </pre></div></div>
 </div>
 <p>Now, we decompose the representation into irreducible components. For that, we call <code class="docutils literal notranslate"><span class="pre">rep.decomposition</span></code>. In the answer I(m)xR(d), we express that the component has <span class="math notranslate nohighlight">\(m\)</span> copies (multiplicity) of a <code class="docutils literal notranslate"><span class="pre">R</span></code>eal representation of dimension <code class="docutils literal notranslate"><span class="pre">d</span></code>. We then play with the indices of the component, and copy.</p>
@@ -533,7 +611,23 @@ error: &#39;G&#39; undefined near line 1, column 1
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-error: &#39;rep&#39; undefined near line 1, column 1
+ans =
+
+Orthogonal reducible representation
+        dimension: 5
+            field: &#39;R&#39;
+            group: Finite group of order 16
+        isUnitary: true
+           parent: Orthogonal representation
+basis(1,&#39;double&#39;): [1; 0; 0; 0; 0]
+basis(2,&#39;double&#39;): [0; -0.5; -0.5; 0.70711; -1.4028e-18]
+basis(3,&#39;double&#39;): [0; 0.5; -0.5; 9.4678e-18; -0.70711]
+basis(4,&#39;double&#39;): [0; -0.51236; 0.48733; -0.017696; -0.70689]
+basis(5,&#39;double&#39;): [0; -0.48733; -0.51236; -0.70689; 0.017696]
+     component(1): Isotypic component R(1) (trivial)
+     component(2): Isotypic component R(2) (nontrivial)
+     component(3): Isotypic component R(2) (nontrivial)
+
 </pre></div></div>
 </div>
 <div class="nbinput docutils container">
@@ -550,7 +644,16 @@ error: &#39;rep&#39; undefined near line 1, column 1
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-error: &#39;rep&#39; undefined near line 1, column 1
+ans =
+
+Orthogonal trivial irreducible real-type subrepresentation
+       dimension: 1
+           field: &#39;R&#39;
+           group: Finite group of order 16
+       isUnitary: true
+          parent: Orthogonal representation
+basis(1,&#39;exact&#39;): [1; 0; 0; 0; 0]
+
 </pre></div></div>
 </div>
 <p>We now ask for the change of basis matrix, and verify that <code class="docutils literal notranslate"><span class="pre">A</span></code> and <code class="docutils literal notranslate"><span class="pre">C</span></code> block-diagonalize.</p>
@@ -570,9 +673,30 @@ error: &#39;rep&#39; undefined near line 1, column 1
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-error: &#39;rep&#39; undefined near line 1, column 1
-error: &#39;U&#39; undefined near line 1, column 1
-error: &#39;U&#39; undefined near line 1, column 1
+U =
+
+   1.0000        0        0        0        0
+        0  -0.5000   0.5000  -0.5124  -0.4873
+        0  -0.5000  -0.5000   0.4873  -0.5124
+        0   0.7071   0.0000  -0.0177  -0.7069
+        0  -0.0000  -0.7071  -0.7069   0.0177
+
+ans =
+
+   1.0000        0        0        0        0
+        0   1.0000   0.0000  -0.0000  -0.0000
+        0   0.0000   1.0000  -0.0000  -0.0000
+        0  -0.0000  -0.0000   1.0000   0.0000
+        0  -0.0000  -0.0000   0.0000   1.0000
+
+ans =
+
+        0        0        0        0        0
+        0  -1.4142  -0.0000   0.0000   0.0000
+        0  -0.0000  -1.4142   0.0000   0.0000
+        0  -0.0000   0.0000   1.4142   0.0000
+        0   0.0000   0.0000   0.0000   1.4142
+
 </pre></div></div>
 </div>
 <p>Once we have found the change of basis matrix, we transform our moment matrix <code class="docutils literal notranslate"><span class="pre">X</span></code>, and naturally it should have a block diagonal structure following the one of <code class="docutils literal notranslate"><span class="pre">C</span></code> and <code class="docutils literal notranslate"><span class="pre">A</span></code> – for that, it may be necessary to kill small off-block coefficients.</p>
@@ -592,9 +716,44 @@ error: &#39;U&#39; undefined near line 1, column 1
 </div>
 <div class="output_area docutils container">
 <div class="highlight"><pre>
-error: &#39;U&#39; undefined near line 1, column 1
-error: &#39;X&#39; undefined near line 1, column 1
-error: &#39;I_CHSH&#39; undefined near line 1, column 1
+
+ num. of constraints =  1
+ dim. of sdp    var  =  5,   num. of sdp  blk  =  1  1th semidefinite block is actually diagonal
+
+*******************************************************************
+   SDPT3: Infeasible path-following algorithms
+*******************************************************************
+ version  predcorr  gam  expon  scale_data
+   HKM      1      0.000   1        0
+it pstep dstep pinfeas dinfeas  gap      prim-obj      dual-obj    cputime
+-------------------------------------------------------------------
+ 0|0.000|0.000|8.0e-01|6.2e+00|5.0e+02| 5.000000e+01  0.000000e+00| 0:0:00| chol  1  1
+ 1|1.000|1.000|6.5e-08|6.9e-02|4.3e+01| 3.984640e+01  4.400004e-01| 0:0:00| chol  1  1
+ 2|0.933|1.000|1.5e-07|6.9e-03|2.9e+00| 3.700414e+00  8.665599e-01| 0:0:00| chol  1  1
+ 3|1.000|0.949|3.5e-08|1.0e-03|2.8e-01| 3.024905e+00  2.752468e+00| 0:0:00| chol  1  1
+ 4|0.987|0.988|1.1e-08|8.0e-05|3.4e-03| 2.830875e+00  2.827762e+00| 0:0:00| chol  1  1
+ 5|0.989|0.989|3.5e-10|7.7e-06|3.8e-05| 2.828454e+00  2.828448e+00| 0:0:00| chol  1  1
+ 6|0.989|0.989|8.9e-12|8.5e-08|4.2e-07| 2.828427e+00  2.828427e+00| 0:0:00|
+  stop: max(relative gap, infeasibilities) &lt; 1.00e-07
+-------------------------------------------------------------------
+ number of iterations   =  6
+ primal objective value =  2.82842742e+00
+ dual   objective value =  2.82842735e+00
+ gap := trace(XZ)       = 4.17e-07
+ relative gap           = 6.26e-08
+ actual relative gap    = 1.04e-08
+ rel. primal infeas (scaled problem)   = 8.94e-12
+ rel. dual     &#34;        &#34;       &#34;      = 8.49e-08
+ rel. primal infeas (unscaled problem) = 0.00e+00
+ rel. dual     &#34;        &#34;       &#34;      = 0.00e+00
+ norm(X), norm(y), norm(Z) = 2.0e+00, 7.1e-01, 3.0e+00
+ norm(A), norm(b), norm(C) = 3.8e+00, 5.0e+00, 3.2e+00
+ Total CPU time (secs)  = 0.06
+ CPU time per iteration = 0.01
+ termination code       =  0
+ DIMACS: 8.9e-12  0.0e+00  1.4e-07  0.0e+00  1.0e-08  6.3e-08
+-------------------------------------------------------------------
+ans = 2.8284
 </pre></div></div>
 </div>
 <p>As an exercice, recover an algebraic basis from <code class="docutils literal notranslate"><span class="pre">U</span></code>, guess the form of the semidefinite program when fully block-diagonal (i.e. for the full group of CHSH symmetries). <strong>Remark that now the problem can be solved by hand to recover the</strong> <span class="math notranslate nohighlight">\(2\sqrt{2}\)</span> <strong>bound, as the SDP matrix is fully diagonal, and thus corresponds to linear inequalities.</strong></p>

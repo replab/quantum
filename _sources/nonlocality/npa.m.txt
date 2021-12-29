@@ -17,7 +17,7 @@
 %
 % We initialize the RepLAB library.
 
-addpath([pwd, '/../../external/replab']);
+addpath([pwd, '/../../../external/replab']);
 replab_init('verbose', 0);
 
 % We examine an upper bound on the quantum maximum of the CHSH inequality. We use the NPA hierarchy, and assume the moment matrix has been constructed in the
