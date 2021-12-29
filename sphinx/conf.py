@@ -69,7 +69,7 @@ autosummary_generate = True
 
 matlab_keep_package_prefix = False
 
-matlab_src_dir = os.path.dirname(os.path.abspath(__file__ + "/"))+"/_src"
+matlab_src_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__ + "/")))+"/src"
 primary_domain = 'mat'
 default_role = 'obj'
 
@@ -98,7 +98,7 @@ exclude_patterns = ['_build', 'Thumbs.db', '.DS_Store', '**.ipynb_checkpoints', 
 pygments_style = 'sphinx'
 
 # The location of Replab's API documentation, to enable cross-references
-intersphinx_mapping = {'mat': ('https://replab.github.io/replab', None)}
+intersphinx_mapping = {'api': ('https://replab.github.io/api', None)}
 intersphinx_cache_limit = -1 # always fetch the latest version of https://replab.github.io/replab/objects.inv
 intersphinx_timeout = 10 # timeout so we don't wait indefinitely if the website is unavailable
 

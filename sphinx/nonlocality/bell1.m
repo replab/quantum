@@ -4,9 +4,9 @@
 %
 % Follow the [installation instructions](https://replab.github.io/replab/docs/installation.html).
 %
-% Then add the RepLAB path. The path below is the one for the machine that produced this notebook! Replace by your own. Or, better, move to the root RepLAB folder and just run the `replab_init` script.
+% Then add the RepLAB path. The path below is the one for the machine that produced this notebook! Replace by your own. Or, better, move to the root RepLAB folder and just run the `~root.replab_init` script.
 
-addpath([pwd, '/../../external/replab']);
+addpath([pwd, '/../../../external/replab']);
 replab_init('verbose', 0);
 
 % ## Symmetries of the outcomes of a measurement
@@ -27,7 +27,7 @@ replab_init('verbose', 0);
 %
 % Below, we construct the symmetric group $S_5$. The object `S5` we construct knows how to compose permutations, when they are written using row vectors of integers in Matlab/Octave. The composition example is the one from [Wikipedia](https://en.wikipedia.org/wiki/Symmetric_group#Multiplication), and we check that we recover the same results.
 
-S5 = replab.SymmetricGroup(5); % or shorter, S5 = replab.S(5)
+S5 = replab.S(5);
 f = [3 2 1 5 4]
 g = [2 5 4 3 1]
 fg = S5.compose(f, g)
