@@ -1,0 +1,20 @@
+{% extends "guzzle_sphinx_theme/layout.html" %}
+
+{# Change the root path element name in the breadcrumbs #}
+{# Change "RepLAB Quantum" to whatever #}
+
+{% block breadcrumbs %}
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ol class="breadcrumb">
+    <li><a href="{{ pathto(master_doc) }}">RepLAB Quantum</a></li>
+    {% for doc in parents %}
+    <li><a href="{{ doc.link|e }}">{{ doc.title }}</a></li>
+    {% endfor %}
+    <li>{{ title }}</li>
+  </ol>
+</div>
+{% endblock %}
+
+{# Remove the previous and next section buttons on the bottom of the page #}
+{% block bottom_rel_links %}
+{% endblock %}
