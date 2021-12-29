@@ -15,7 +15,7 @@
   <link rel="stylesheet" type="text/css" href="../_static/css/bootstrap-theme.min.css" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   
-    <title>Symmetric NPA relaxations &#8212; RepLAB-Quantum 0.1.0 documentation</title>
+    <title>Symmetric NPA relaxations &#8212; RepLAB Quantum</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
     <link rel="stylesheet" type="text/css" href="../_static/guzzle.css" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
@@ -33,34 +33,9 @@
     <script src="../_static/js/collapse_helper.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Symmetries in Bell nonlocality, part 3" href="bell3.html" /> 
+    <link rel="prev" title="Symmetries in Bell nonlocality, part 3" href="bell3.html" />
   
    
-  
-<style type="text/css">
-  ul.ablog-archive {
-    list-style: none;
-    overflow: auto;
-    margin-left: 0px;
-  }
-  ul.ablog-archive li {
-    float: left;
-    margin-right: 5px;
-    font-size: 80%;
-  }
-  ul.postlist a {
-    font-style: italic;
-  }
-  ul.postlist-style-disc {
-    list-style-type: disc;
-  }
-  ul.postlist-style-none {
-    list-style-type: none;
-  }
-  ul.postlist-style-circle {
-    list-style-type: circle;
-  }
-</style>
 
   </head><body>
     <div class="related" role="navigation" aria-label="related navigation">
@@ -72,7 +47,7 @@
         <li class="right" >
           <a href="bell3.html" title="Symmetries in Bell nonlocality, part 3"
              accesskey="P">previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">RepLAB-Quantum 0.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">RepLAB Quantum</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="index.html" accesskey="U">Nonlocality</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Symmetric NPA relaxations</a></li> 
       </ul>
@@ -84,8 +59,9 @@
       </div>
   <div id="left-column">
     <div class="sphinxsidebar"><div class="text-logo">
+  <a class="website-part" href="https://replab.github.io"><img src="../_static/img/logo48.png" width="24" height="24" /></a>&nbsp;&nbsp;
   <a href="
-    ../index.html">RepLAB-Quantum</a>&nbsp;&nbsp;
+    ../index.html">RepLAB Quantum</a>&nbsp;&nbsp;
   <a href="https://github.com/replab/quantum"><i class="fab fa-github"></i></a>&nbsp;
 </div><div class="sidebar-block">
   <div class="sidebar-toc">
@@ -109,18 +85,19 @@
   </div>
         <div id="right-column">
           
-          <div role="navigation" aria-label="breadcrumbs navigation">
-            <ol class="breadcrumb">
-              <li><a href="../index.html">Docs</a></li>
-              
-                <li><a href="index.html">Nonlocality</a></li>
-              
-              <li>Symmetric NPA relaxations</li>
-            </ol>
-          </div>
-          
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ol class="breadcrumb">
+    <li><a href="../index.html">RepLAB Quantum</a></li>
+    
+    <li><a href="index.html">Nonlocality</a></li>
+    
+    <li>Symmetric NPA relaxations</li>
+  </ol>
+</div>
+
           <div class="document clearer body">
-             
+            
+  
 <style>
 /* CSS for nbsphinx extension */
 
@@ -591,7 +568,7 @@ preimages{3}: [1, 3, 2, 4, -5]
 <div class="highlight"><pre>
 g =
 
-   1   2   3   4   5
+   1  -2  -3  -4  -5
 
 </pre></div></div>
 </div>
@@ -620,10 +597,10 @@ Orthogonal reducible representation
         isUnitary: true
            parent: Orthogonal representation
 basis(1,&#39;double&#39;): [1; 0; 0; 0; 0]
-basis(2,&#39;double&#39;): [0; -0.5; -0.5; 0.70711; -1.4028e-18]
-basis(3,&#39;double&#39;): [0; 0.5; -0.5; 9.4678e-18; -0.70711]
-basis(4,&#39;double&#39;): [0; -0.51236; 0.48733; -0.017696; -0.70689]
-basis(5,&#39;double&#39;): [0; -0.48733; -0.51236; -0.70689; 0.017696]
+basis(2,&#39;double&#39;): [0; -0.5; 0.5; 2.8082e-17; -0.70711]
+basis(3,&#39;double&#39;): [0; 0.5; 0.5; 0.70711; 3.7322e-17]
+basis(4,&#39;double&#39;): [0; 0.50691; 0.49299; -0.70704; -0.0098464]
+basis(5,&#39;double&#39;): [0; 0.49299; -0.50691; 0.0098464; -0.70704]
      component(1): Isotypic component R(1) (trivial)
      component(2): Isotypic component R(2) (nontrivial)
      component(3): Isotypic component R(2) (nontrivial)
@@ -676,26 +653,26 @@ basis(1,&#39;exact&#39;): [1; 0; 0; 0; 0]
 U =
 
    1.0000        0        0        0        0
-        0  -0.5000   0.5000  -0.5124  -0.4873
-        0  -0.5000  -0.5000   0.4873  -0.5124
-        0   0.7071   0.0000  -0.0177  -0.7069
-        0  -0.0000  -0.7071  -0.7069   0.0177
+        0  -0.5000   0.5000   0.5069   0.4930
+        0   0.5000   0.5000   0.4930  -0.5069
+        0   0.0000   0.7071  -0.7070   0.0098
+        0  -0.7071   0.0000  -0.0098  -0.7070
 
 ans =
 
    1.0000        0        0        0        0
-        0   1.0000   0.0000  -0.0000  -0.0000
-        0   0.0000   1.0000  -0.0000  -0.0000
-        0  -0.0000  -0.0000   1.0000   0.0000
-        0  -0.0000  -0.0000   0.0000   1.0000
+        0   1.0000  -0.0000   0.0000   0.0000
+        0  -0.0000   1.0000   0.0000   0.0000
+        0   0.0000   0.0000   1.0000  -0.0000
+        0   0.0000   0.0000  -0.0000   1.0000
 
 ans =
 
         0        0        0        0        0
-        0  -1.4142  -0.0000   0.0000   0.0000
-        0  -0.0000  -1.4142   0.0000   0.0000
-        0  -0.0000   0.0000   1.4142   0.0000
-        0   0.0000   0.0000   0.0000   1.4142
+        0   1.4142  -0.0000   0.0000  -0.0000
+        0  -0.0000   1.4142   0.0000  -0.0000
+        0   0.0000  -0.0000  -1.4142   0.0000
+        0  -0.0000  -0.0000   0.0000  -1.4142
 
 </pre></div></div>
 </div>
@@ -748,7 +725,7 @@ it pstep dstep pinfeas dinfeas  gap      prim-obj      dual-obj    cputime
  rel. dual     &#34;        &#34;       &#34;      = 0.00e+00
  norm(X), norm(y), norm(Z) = 2.0e+00, 7.1e-01, 3.0e+00
  norm(A), norm(b), norm(C) = 3.8e+00, 5.0e+00, 3.2e+00
- Total CPU time (secs)  = 0.06
+ Total CPU time (secs)  = 0.07
  CPU time per iteration = 0.01
  termination code       =  0
  DIMACS: 8.9e-12  0.0e+00  1.4e-07  0.0e+00  1.0e-08  6.3e-08
@@ -759,21 +736,9 @@ ans = 2.8284
 <p>As an exercice, recover an algebraic basis from <code class="docutils literal notranslate"><span class="pre">U</span></code>, guess the form of the semidefinite program when fully block-diagonal (i.e. for the full group of CHSH symmetries). <strong>Remark that now the problem can be solved by hand to recover the</strong> <span class="math notranslate nohighlight">\(2\sqrt{2}\)</span> <strong>bound, as the SDP matrix is fully diagonal, and thus corresponds to linear inequalities.</strong></p>
 </section>
 
-<div class="section">
-   
-</div>
 
           </div>
-            
-  <div class="footer-relations">
-    
-      <div class="pull-left">
-        <a class="btn btn-default" href="bell3.html" title="previous chapter (use the left arrow)">Symmetries in Bell nonlocality, part 3</a>
-      </div>
-    
-    </div>
-    <div class="clearer"></div>
-  
+
         </div>
         <div class="clearfix"></div>
     </div>
@@ -786,7 +751,7 @@ ans = 2.8284
         <li class="right" >
           <a href="bell3.html" title="Symmetries in Bell nonlocality, part 3"
              >previous</a> |</li>
-        <li class="nav-item nav-item-0"><a href="../index.html">RepLAB-Quantum 0.1.0 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-0"><a href="../index.html">RepLAB Quantum</a> &#187;</li>
           <li class="nav-item nav-item-1"><a href="index.html" >Nonlocality</a> &#187;</li>
         <li class="nav-item nav-item-this"><a href="">Symmetric NPA relaxations</a></li> 
       </ul>
