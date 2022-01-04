@@ -21,4 +21,4 @@ Feedback and suggestions are always welcome. We ask participants to follow the g
 License
 -------
 
-RepLAB-Quantum is (C) 2018-2021 Denis Rosset, Jean-Daniel Bancal and other collaborators, and licensed under the `Mozilla Public License 2.0 <https://github.com/replab/replab/LICENSE>`_.
+RepLAB-Quantum is (C) 2018-2022 Denis Rosset, Jean-Daniel Bancal and other collaborators, and licensed under the `Mozilla Public License 2.0 <https://github.com/replab/replab/LICENSE>`_.
