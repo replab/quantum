@@ -77,7 +77,7 @@ matlab_src_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__ + "/")
 
 intersphinx_mapping = {'api': ('https://replab.github.io/api', None),
                        'web': ('https://replab.github.io/web', None),
-                       'apps': ('https://replab.github.io/apps', None),
+                       'applis': ('https://replab.github.io/applis', None),
                        'blog': ('https://replab.github.io/web', None)}
 intersphinx_cache_limit = -1 # always fetch the latest version
 intersphinx_timeout = 10 # timeout so we don't wait indefinitely if the website is unavailable
